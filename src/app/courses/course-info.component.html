@@ -1,0 +1,101 @@
+<h2>Course Info</h2>
+
+<hr />
+
+<form #courseForm="ngForm" *ngIf="course">
+  <div class="form-group row mt-4 mb-3 w-50 formGroup">
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <span
+          class="col sm-2 col-from-label text-center input-group-text labelForm"
+          >Name:</span
+        >
+      </div>
+      <input
+        [(ngModel)]="course.name"
+        required
+        name="name"
+        #courseName="ngModel"
+        [ngClass]="{ 'is-invalid': courseName.invalid }"
+        class="form-control"
+      />
+      <div class="invalid-feedback text-center">
+        <span class="text-danger">Course name required!!</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group row mt-4 mb-3 w-50 formGroup">
+    <div class="input-group">
+      <div class="input-group-prepend text-center">
+        <span
+          class="col sm-2 col-from-label text-center input-group-text labelForm"
+          >Price:</span
+        >
+      </div>
+      <input
+        [(ngModel)]="course.price"
+        required
+        name="price"
+        type="number"
+        #coursePrice="ngModel"
+        [ngClass]="{ 'is-invalid': coursePrice.invalid }"
+        class="form-control"
+      />
+      <div class="invalid-feedback text-center">
+        <span class="text-danger">Course price required!!</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group row mt-4 mb-3 w-50 formGroup">
+    <div class="input-group">
+      <div class="input-group-prepend text-center">
+        <span
+          class="col sm-2 col-from-label text-center input-group-text labelForm"
+          >Rating:</span
+        >
+      </div>
+      <input
+        [(ngModel)]="course.rating"
+        required
+        name="rating"
+        type="number"
+        #courseRating="ngModel"
+        [ngClass]="{ 'is-invalid': courseRating.invalid }"
+        class="form-control"
+      />
+      <div class="invalid-feedback text-center">
+        <span class="text-danger">Course rating required!!</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group row mt-4 mb-3 w-50 formGroup">
+    <div class="input-group">
+      <div class="input-group-prepend text-center">
+        <span
+          class="col sm-2 col-from-label text-center input-group-text labelDesc"
+          >Description:</span
+        >
+      </div>
+      <textarea
+        [(ngModel)]="course.description"
+        required
+        name="description"
+        #courseDescription="ngModel"
+        [ngClass]="{ 'is-invalid': courseDescription.invalid }"
+        class="form-control"
+      >
+      </textarea>
+      <div class="invalid-feedback text-center">
+        <span class="text-danger">Course price required!!</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="buttons justify-content-center row">
+    <button [disabled]="courseForm.invalid" (click)="save()" class="btn btn-primary mx-auto d-block">Save</button>
+    <button [routerLink]="['/courses']" class="btn btn-danger mx-auto d-block">Cancel</button>
+  </div>
+</form>

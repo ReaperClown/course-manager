@@ -1,0 +1,21 @@
+textarea,
+span.labelDesc {
+  height: 60px;
+}
+
+.input-group-text {
+  vertical-align: middle;
+}
+
+button {
+  /* display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-column-gap: 30px; */
+  width: 90px;
+  margin: 10px 25px !important;
+  /* margin: 0 auto; */
+}
+
+.buttons {
+    
+}
